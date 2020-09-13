@@ -6,8 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import os
 
-# driver = webdriver.Chrome("C:\Program Files (x86)\chromedriver.exe")
-driver=webdriver.Chrome()
+driver = webdriver.Chrome("C:\Program Files (x86)\chromedriver.exe")
 driver.maximize_window()
 wait = WebDriverWait(driver, 3)
 presence = EC.presence_of_element_located
@@ -36,7 +35,9 @@ ByPass_Login_Info()
 
 def Anymonious_Follow():
     time.sleep(10)
-    People=['1','2','3','5','6','8','9','10','11']
+    People=['1','2','3','4','5','6','8','9','10',
+            '11','12','13','14','15','16','17',
+            '18','19','20','21','23','24','25']
     for xx in People:
         driver.find_element_by_xpath("//*[@id='react-root']/section/main/div/div[2]/div/div/div["+str(xx)+"]/div[3]/button").click()
 Anymonious_Follow()
