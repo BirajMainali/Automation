@@ -35,5 +35,5 @@ def Share_purchase():
     time.sleep(3)
     alert = driver.switch_to_alert()
     alert.accept()
-    
+
 Share_purchase()
