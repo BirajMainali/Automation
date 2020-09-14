@@ -7,7 +7,7 @@ import time
 import os
 
 driver = webdriver.Chrome("C:\Program Files (x86)\chromedriver.exe")
-driver.maximize_window()
+# driver.maximize_window()
 wait = WebDriverWait(driver, 3)
 presence = EC.presence_of_element_located
 visible = EC.visibility_of_element_located
@@ -42,6 +42,3 @@ def Anymonious_Follow():
         driver.find_element_by_xpath("//*[@id='react-root']/section/main/div/div[2]/div/div/div["+str(xx)+"]/div[3]/button").click()
 Anymonious_Follow()
 # //Anymonious_Bot
-
-
-
