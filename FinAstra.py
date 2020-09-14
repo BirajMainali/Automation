@@ -16,8 +16,8 @@ visible = EC.visibility_of_element_located
 port = driver.get("http://xtreme:8000/")
 
 def FinAstra_login():
-    driver.find_element_by_xpath("//*[@id='UserName']").send_keys("****************")
-    driver.find_element_by_xpath("//*[@id='UserPassword']").send_keys("***************")
+    driver.find_element_by_xpath("//*[@id='UserName']").send_keys("**")
+    driver.find_element_by_xpath("//*[@id='UserPassword']").send_keys("**")
     driver.find_element_by_xpath("//*[@id='login']").click()
 
 FinAstra_login()
