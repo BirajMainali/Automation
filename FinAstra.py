@@ -16,8 +16,8 @@ visible = EC.visibility_of_element_located
 port = driver.get("http://xtreme:8000/")
 
 def FinAstra_login():
-    driver.find_element_by_xpath("//*[@id='UserName']").send_keys("office")
-    driver.find_element_by_xpath("//*[@id='UserPassword']").send_keys("1<2.1")
+    driver.find_element_by_xpath("//*[@id='UserName']").send_keys("****************")
+    driver.find_element_by_xpath("//*[@id='UserPassword']").send_keys("***************")
     driver.find_element_by_xpath("//*[@id='login']").click()
 
 FinAstra_login()
@@ -35,4 +35,5 @@ def Share_purchase():
     time.sleep(3)
     alert = driver.switch_to_alert()
     alert.accept()
+    
 Share_purchase()
