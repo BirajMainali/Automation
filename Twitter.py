@@ -31,7 +31,7 @@ class Twitter_bot:
         for i in range(1,3):
             bot.execute_script('window.scrollTo(0,document.body.scrollHeight)')
             time.sleep(2)
-            tweets = bot.find_elements_by_class_name("tweet")
+            tweets = bot.find_elements_by_class_name("r-18u37iz")
             links = [el.get_attribute('data-permalink-path')
                     for el in tweets]
             for link in links:
@@ -40,8 +40,12 @@ class Twitter_bot:
                     bot.find_elements_by_class_name("r-1niwhzg").click()
                     time.sleep(7)
                 except Exception as ex:
-                    time.sleep(60)
-
-Tw = Twitter_bot("9880687994","incorrect1530")
+                    print("Error Occured")
+        # People=['1','2','3','4','5','6','8','9','10','11','12','13','14','15','16','17',
+        #         '18','19','20','21','23','24','25','26','27','28','29','30','32','33','34']
+        # for xx in People:
+        #         bot.find_element_by_xpath("//*[@id='react-root']/div/div/div[2]/main/div/div/div/div[1]/div/div[4]/div/div/section/div/div/div["+str(xx)+"]/div/div/article/div/div/div/div[2]/div[2]/div[2]/div[3]/div[3]/div/div/div[1]/div").click()
+        #         time.sleep(5)
+Tw = Twitter_bot("****","****")
 Tw.login()
-Tw.Like_Tweet('Webdevelopment')
+Tw.Like_Tweet('dev')
