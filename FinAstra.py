@@ -16,8 +16,8 @@ visible = EC.visibility_of_element_located
 class FinAstra_Bot:
 
         def __init__(self):
-            self.UserName = 'office'
-            self.Password = '1<2.1'
+            self.UserName = '*****'
+            self.Password = '*****'
             self.MemberNo = 'M00001'
             self.ShareNo = '10'
             self.Fees = '290'
@@ -63,15 +63,9 @@ class FinAstra_Bot:
             Alert.send_keys("Share TransactionEdit by FinAstra_Bot")
             Alert.accept()
 
-LG = FinAstra_Bot()
-LG.FinAstra_login()
-
-SP = FinAstra_Bot()
-SP.Share_purchase()
-
-RP = FinAstra_Bot()
-RP.Report_Performace()
-
-SR = FinAstra_Bot()
-SR.Share_Reverse()
-RP.Report_Performace()
+FB = FinAstra_Bot()
+FB.FinAstra_login()
+FB.Share_purchase()
+FB.Report_Performace()
+FB.Share_Reverse()
+FB.Report_Performace()
