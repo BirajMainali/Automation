@@ -16,8 +16,8 @@ visible = EC.visibility_of_element_located
 class FinAstra_Bot:
 
         def __init__(self):
-            self.UserName = '*****'
-            self.Password = '*****'
+            self.UserName = '****'
+            self.Password = '****'
             self.MemberNo = 'M00001'
             self.ShareNo = '10'
             self.Fees = '290'
@@ -37,8 +37,10 @@ class FinAstra_Bot:
             time.sleep(2)
             driver.get(str(self.port)+str(self.pruchase))
             driver.find_element_by_xpath("//*[@id='MemberNo_chosen']").click()
-            driver.find_element_by_xpath("//*[@id='MemberNo_chosen']/div/div/input").send_keys(self.MemberNo)
-            driver.find_element_by_xpath("//*[@id='MemberNo_chosen']/div/ul/li").click()
+            MemberNo = driver.find_element_by_xpath("//*[@id='MemberNo_chosen']/div/div/input")
+            MemberNo.send_keys(self.MemberNo)
+            MemberNo.send_keys(Keys.RETURN)
+            # driver.find_element_by_xpath("//*[@id='MemberNo_chosen']/div/ul/li").click()
             driver.find_element_by_xpath("//*[@id='ShareNo']").send_keys(self.ShareNo)
             driver.find_element_by_xpath("//*[@id='MembershipFee']").send_keys(self.Fees)
             driver.find_element_by_xpath("//*[@id='Remarks']").send_keys(self.Remarks)
@@ -46,7 +48,6 @@ class FinAstra_Bot:
             time.sleep(1.5)
             alert = driver.switch_to_alert()
             alert.accept()
-
         def Report_Performace(self):
             time.sleep(2)
             driver.get(str(self.port)+str(self.Share_Performance_link))
@@ -59,9 +60,11 @@ class FinAstra_Bot:
             driver.execute_script("$('.selectcheckbox').click()")
             time.sleep(0.5)
             driver.find_element_by_xpath("//*[@id='ReverseForm']/div[3]/button").click()
-            Alert = driver.switch_to_alert()
-            Alert.send_keys("Share TransactionEdit by FinAstra_Bot")
-            Alert.accept()
+            alert = driver.switch_to_alert()
+            alert.getText()
+            alert.send_keys("I am an Automation !!")
+            time.sleep(5)
+            alert.accept()
 
 FB = FinAstra_Bot()
 FB.FinAstra_login()
