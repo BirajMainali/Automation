@@ -9,7 +9,7 @@ class Twitter_bot:
     def __init__(self,UserName,Password):
         self.UserName = UserName
         self.Password = Password
-        self.bot = webdriver.Chrome("C:\Program Files (x86)\chromedriver.exe")
+        self.bot = webdriver.Chrome("C:/Program Files (x86)/chromedriver.exe")
 
     def login(self):
         bot = self.bot

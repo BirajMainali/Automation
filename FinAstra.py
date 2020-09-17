@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import os
 
-driver = webdriver.Chrome("C:\Program Files (x86)\chromedriver.exe")
+driver = webdriver.Chrome("C:/Program Files (x86)/chromedriver.exe")
 driver.maximize_window()
 driver.maximize_window()
 wait = WebDriverWait(driver, 3)
@@ -37,9 +37,9 @@ class FinAstra_Bot:
             time.sleep(2)
             driver.get(str(self.port)+str(self.pruchase))
             driver.find_element_by_xpath("//*[@id='MemberNo_chosen']").click()
-            MemberNo = driver.find_element_by_xpath("//*[@id='MemberNo_chosen']/div/div/input")
-            MemberNo.send_keys(self.MemberNo)
-            MemberNo.send_keys(Keys.RETURN)
+            Member_No = driver.find_element_by_xpath("//*[@id='MemberNo_chosen']/div/div/input")
+            Member_No.send_keys(self.MemberNo)
+            Member_No.send_keys(Keys.RETURN)
             # driver.find_element_by_xpath("//*[@id='MemberNo_chosen']/div/ul/li").click()
             driver.find_element_by_xpath("//*[@id='ShareNo']").send_keys(self.ShareNo)
             driver.find_element_by_xpath("//*[@id='MembershipFee']").send_keys(self.Fees)
@@ -48,6 +48,7 @@ class FinAstra_Bot:
             time.sleep(1.5)
             alert = driver.switch_to_alert()
             alert.accept()
+
         def Report_Performace(self):
             time.sleep(2)
             driver.get(str(self.port)+str(self.Share_Performance_link))
@@ -60,11 +61,12 @@ class FinAstra_Bot:
             driver.execute_script("$('.selectcheckbox').click()")
             time.sleep(0.5)
             driver.find_element_by_xpath("//*[@id='ReverseForm']/div[3]/button").click()
-            alert = driver.switch_to_alert()
-            alert.getText()
-            alert.send_keys("I am an Automation !!")
-            time.sleep(5)
-            alert.accept()
+            # Not working script
+            # alert = driver.switch_to_alert()
+            # alert.getText()
+            # alert.send_keys("I am an Automation !!")
+            # time.sleep(5)
+            # alert.accept()
 
 FB = FinAstra_Bot()
 FB.FinAstra_login()
