@@ -3,10 +3,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 import os
 
-driver = webdriver.Chrome("C:/Program Files (x86)/chromedriver.exe")
+driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.maximize_window()
 driver.maximize_window()
 wait = WebDriverWait(driver, 3)
@@ -16,9 +17,9 @@ visible = EC.visibility_of_element_located
 class FinAstra_Bot:
 
         def __init__(self):
-            self.UserName = '****'
-            self.Password = '****'
-            self.MemberNo = 'M00001'
+            self.UserName = 'office'
+            self.Password = '1<2.1'
+            self.MemberNo = '101'
             self.ShareNo = '10'
             self.Fees = '290'
             self.Remarks ='Share Remarks Test by Auto bot'
@@ -28,7 +29,7 @@ class FinAstra_Bot:
             self.Share_revert_link = "Member/TransactionEdit/SearchTransaction"
 
         def FinAstra_login(self):
-            port = driver.get(str(self.port))
+            driver.get(str(self.port))
             driver.find_element_by_xpath("//*[@id='UserName']").send_keys(self.UserName)
             driver.find_element_by_xpath("//*[@id='UserPassword']").send_keys(self.Password)
             driver.find_element_by_xpath("//*[@id='login']").click()
@@ -37,10 +38,8 @@ class FinAstra_Bot:
             time.sleep(2)
             driver.get(str(self.port)+str(self.pruchase))
             driver.find_element_by_xpath("//*[@id='MemberNo_chosen']").click()
-            Member_No = driver.find_element_by_xpath("//*[@id='MemberNo_chosen']/div/div/input")
-            Member_No.send_keys(self.MemberNo)
-            Member_No.send_keys(Keys.RETURN)
-            # driver.find_element_by_xpath("//*[@id='MemberNo_chosen']/div/ul/li").click()
+            driver.find_element_by_xpath("//*[@id='MemberNo_chosen']/div/div/input").send_keys(self.MemberNo)
+            driver.find_element_by_xpath("//*[@id='MemberNo_chosen']/div/ul/li").click()
             driver.find_element_by_xpath("//*[@id='ShareNo']").send_keys(self.ShareNo)
             driver.find_element_by_xpath("//*[@id='MembershipFee']").send_keys(self.Fees)
             driver.find_element_by_xpath("//*[@id='Remarks']").send_keys(self.Remarks)
@@ -62,11 +61,14 @@ class FinAstra_Bot:
             time.sleep(0.5)
             driver.find_element_by_xpath("//*[@id='ReverseForm']/div[3]/button").click()
             # Not working script
-            # alert = driver.switch_to_alert()
-            # alert.getText()
-            # alert.send_keys("I am an Automation !!")
-            # time.sleep(5)
-            # alert.accept()
+            alert = driver.switch_to.alert
+            
+            alert.send_keys("I am an Automation !!")
+            time.sleep(5)
+            alert.accept()
+
+            alert1 = driver.switch_to.alert
+            alert1.accept()
 
 FB = FinAstra_Bot()
 FB.FinAstra_login()
