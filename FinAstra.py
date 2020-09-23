@@ -17,8 +17,8 @@ visible = EC.visibility_of_element_located
 class FinAstra_Bot:
 
         def __init__(self):
-            self.UserName = 'office'
-            self.Password = '1<2.1'
+            self.UserName = '******'
+            self.Password = '*****'
             self.MemberNo = '101'
             self.ShareNo = '10'
             self.Fees = '290'
