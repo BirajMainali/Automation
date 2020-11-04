@@ -60,7 +60,6 @@ class FinAstra_Bot:
             driver.execute_script("$('.selectcheckbox').click()")
             time.sleep(0.5)
             driver.find_element_by_xpath("//*[@id='ReverseForm']/div[3]/button").click()
-            # Not working script
             alert = driver.switch_to.alert
             
             alert.send_keys("I am an Automation !!")
